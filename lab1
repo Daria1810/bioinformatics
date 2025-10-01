@@ -1,0 +1,105 @@
+import tkinter as tk
+from tkinter import messagebox
+import random
+
+
+#Exercise 1
+
+print("Exercise 1:")
+
+def find_alphabet(sequence: str) -> set:
+
+    return set(sequence)
+
+seq = "ABBBABBBABABABABABC"
+alphabet = find_alphabet(seq)
+print("Alphabet of sequence:", alphabet)
+
+
+
+print("Exercise 2:")
+
+alphabet = set(seq)
+
+percentages = {base: (seq.count(base) / len(seq)) * 100 for base in alphabet}
+for base in sorted(percentages):
+    print(f"{base}: {percentages[base]:.2f}%")
+
+
+
+# Exercise 3: Read sequence from FASTA file and calculate percentages
+
+print("Exercise 3")
+
+def read_fasta_sequence(filepath: str) -> str:
+    sequence = []
+    with open(filepath, 'r') as file:
+        for line in file:
+            if not line.startswith('>'):
+                sequence.append(line.strip())
+    return ''.join(sequence)
+
+fasta_file = "C:\\Users\\cryst\\Desktop\\fasta.fasta"  # Replace with your FASTA file path
+seq_from_fasta = read_fasta_sequence(fasta_file)
+alphabet_fasta = set(seq_from_fasta)
+percentages_fasta = {base: (seq_from_fasta.count(base) / len(seq_from_fasta)) * 100 for base in alphabet_fasta}
+for base in sorted(percentages_fasta):
+    print(f"{base}: {percentages_fasta[base]:.2f}%")
+
+
+# Exercise 4: GUI for FASTA generation and analysis
+
+def generate_random_sequence(length: int, alphabet: str) -> str:
+    return ''.join(random.choices(alphabet, k=length))
+
+def save_fasta(filepath: str, sequence: str, text_widget):
+    with open(filepath, 'w') as f:
+        f.write(">Randomly generated sequence\n")
+        # Write sequence in lines of 60 chars (FASTA format)
+        text_widget.delete("1.0", tk.END)
+        text_widget.insert(tk.END, ">Randomly generated sequence\n")
+        for i in range(0, len(sequence), 60):
+            line = sequence[i:i+60]
+            f.write(line + '\n')
+            text_widget.insert(tk.END, line + '\n')
+
+def on_generate():
+    try:
+        length = int(entry_length.get())
+        alphabet = entry_alphabet.get().strip()
+        if not alphabet:
+            messagebox.showerror("Error", "Alphabet cannot be empty.")
+            return
+        if length <= 0:
+            messagebox.showerror("Error", "Length must be positive.")
+            return
+        sequence = generate_random_sequence(length, alphabet)
+        save_fasta(fasta_file, sequence, text_fasta)
+        messagebox.showinfo("Success", f"FASTA file saved to:\n{fasta_file}")
+        # Analyse and show percentages
+        percentages = {base: (sequence.count(base) / len(sequence)) * 100 for base in set(sequence)}
+        result = "\n".join(f"{base}: {percentages[base]:.2f}%" for base in sorted(percentages))
+        messagebox.showinfo("Sequence Analysis", result)
+    except Exception as e:
+        messagebox.showerror("Error", str(e))
+
+# Create the GUI
+root = tk.Tk()
+root.title("FASTA Generator & Analyzer")
+
+tk.Label(root, text="Alphabet:").grid(row=0, column=0, sticky="e")
+entry_alphabet = tk.Entry(root)
+entry_alphabet.grid(row=0, column=1)
+
+tk.Label(root, text="Sequence Length:").grid(row=1, column=0, sticky="e")
+entry_length = tk.Entry(root)
+entry_length.grid(row=1, column=1)
+
+btn_generate = tk.Button(root, text="Generate & Analyze", command=on_generate)
+btn_generate.grid(row=2, column=0, columnspan=2, pady=10)
+
+# Add a Text widget to display the FASTA output
+text_fasta = tk.Text(root, width=70, height=10)
+text_fasta.grid(row=3, column=0, columnspan=2, padx=5, pady=5)
+
+root.mainloop()
