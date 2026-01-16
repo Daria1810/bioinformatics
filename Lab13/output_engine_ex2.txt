@@ -1,0 +1,113 @@
+======================================================================
+DNA SEQUENCE GENERATION ENGINE
+======================================================================
+
+Loading transition matrix from JSON file...
+
+✓ Successfully loaded transition matrix!
+✓ Training sequence length: 50 nucleotides
+✓ Nucleotides: ['A', 'T', 'C', 'G']
+
+======================================================================
+TRANSITION PROBABILITY VECTORS (WORD VECTORS)
+======================================================================
+
+Each nucleotide has a probability vector for transitioning to the next:
+
+Nucleotide 'A' transition vector:
+  Vector: [A:0.3333, T:0.2778, C:0.1667, G:0.2222]
+  Sum: 1.000000
+
+Nucleotide 'T' transition vector:
+  Vector: [A:0.3077, T:0.3077, C:0.1538, G:0.2308]
+  Sum: 1.000000
+
+Nucleotide 'C' transition vector:
+  Vector: [A:0.3636, T:0.2727, C:0.3636, G:0.0000]
+  Sum: 1.000000
+
+Nucleotide 'G' transition vector:
+  Vector: [A:0.5714, T:0.1429, C:0.2857, G:0.0000]
+  Sum: 1.000000
+
+======================================================================
+GENERATING NEW DNA SEQUENCES
+======================================================================
+
+Using transition probability vectors to generate sequences...
+
+Sequence 1: ACAATCTGTTTTCTATCAATTCCCTCATAACATTTTTTGCTCAATGATGA
+Sequence 2: CTAGTTTATCCTCTCCCACAATAGTCATTAACACTTGCAAATCCACTCAT
+Sequence 3: AATTCAAACCTGAATAGATTTAGCAATGCATGACATGCATATTAAGATCC
+Sequence 4: GACCAGAACACCCTTCTATGAGCTCAGCCAAATTTAAGAGATGTACTCAC
+Sequence 5: CACTATACCCTACCAGATGATAAGATGAGCATTTAAAAGCAAGACATGAA
+
+======================================================================
+SEQUENCE COMPARISON
+======================================================================
+
+Original Training Sequence:
+  AACTTTAAGAAATTATGTGCATGCCTTCAAGACCCAGAGACCTAATCATA
+
+  Nucleotide frequencies:
+    A: 19 (0.3800 or 38.00%)
+    T: 13 (0.2600 or 26.00%)
+    C: 11 (0.2200 or 22.00%)
+    G:  7 (0.1400 or 14.00%)
+
+----------------------------------------------------------------------
+
+Generated Sequence 1:
+  ACAATCTGTTTTCTATCAATTCCCTCATAACATTTTTTGCTCAATGATGA
+
+  Nucleotide frequencies:
+    A: 14 (0.2800 or 28.00%) [diff: -0.1000]
+    T: 21 (0.4200 or 42.00%) [diff: +0.1600]
+    C: 11 (0.2200 or 22.00%) [diff: +0.0000]
+    G:  4 (0.0800 or 8.00%) [diff: -0.0600]
+
+Generated Sequence 2:
+  CTAGTTTATCCTCTCCCACAATAGTCATTAACACTTGCAAATCCACTCAT
+
+  Nucleotide frequencies:
+    A: 15 (0.3000 or 30.00%) [diff: -0.0800]
+    T: 16 (0.3200 or 32.00%) [diff: +0.0600]
+    C: 16 (0.3200 or 32.00%) [diff: +0.1000]
+    G:  3 (0.0600 or 6.00%) [diff: -0.0800]
+
+Generated Sequence 3:
+  AATTCAAACCTGAATAGATTTAGCAATGCATGACATGCATATTAAGATCC
+
+  Nucleotide frequencies:
+    A: 20 (0.4000 or 40.00%) [diff: +0.0200]
+    T: 14 (0.2800 or 28.00%) [diff: +0.0200]
+    C:  9 (0.1800 or 18.00%) [diff: -0.0400]
+    G:  7 (0.1400 or 14.00%) [diff: +0.0000]
+
+Generated Sequence 4:
+  GACCAGAACACCCTTCTATGAGCTCAGCCAAATTTAAGAGATGTACTCAC
+
+  Nucleotide frequencies:
+    A: 17 (0.3400 or 34.00%) [diff: -0.0400]
+    T: 11 (0.2200 or 22.00%) [diff: -0.0400]
+    C: 14 (0.2800 or 28.00%) [diff: +0.0600]
+    G:  8 (0.1600 or 16.00%) [diff: +0.0200]
+
+Generated Sequence 5:
+  CACTATACCCTACCAGATGATAAGATGAGCATTTAAAAGCAAGACATGAA
+
+  Nucleotide frequencies:
+    A: 22 (0.4400 or 44.00%) [diff: +0.0600]
+    T: 10 (0.2000 or 20.00%) [diff: -0.0600]
+    C: 10 (0.2000 or 20.00%) [diff: -0.0200]
+    G:  8 (0.1600 or 16.00%) [diff: +0.0200]
+
+======================================================================
+STATISTICAL ANALYSIS
+======================================================================
+
+Average nucleotide frequencies across all generated sequences:
+  A: 0.3520 (original: 0.3800, diff: -0.0280)
+  T: 0.2880 (original: 0.2600, diff: +0.0280)
+  C: 0.2400 (original: 0.2200, diff: +0.0200)
+  G: 0.1200 (original: 0.1400, diff: -0.0200)

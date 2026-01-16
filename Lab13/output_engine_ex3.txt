@@ -1,0 +1,156 @@
+================================================================================
+TEXT GENERATION ENGINE
+================================================================================
+
+Loading word transition matrix from JSON file...
+
+✓ Successfully loaded word transition matrix!
+✓ Training text length: 315 characters
+✓ Unique words: 41
+✓ Total word pairs analyzed: 56
+
+================================================================================
+SAMPLE TRANSITION PROBABILITY VECTORS (WORD VECTORS)
+================================================================================
+
+Each word has a probability vector for transitioning to the next word:
+
+Word 'and' (Symbol: W0) transition vector:
+  Can transition to 3 different words:
+    → 'laugh' (W17): 0.3333
+    → 'sets' (W25): 0.3333
+    → 'carries' (W7): 0.3333
+  Vector sum: 1.000000
+
+Word 'appreciate' (Symbol: W1) transition vector:
+  Can transition to 1 different words:
+    → 'the' (W30): 1.0000
+  Vector sum: 1.000000
+
+Word 'east' (Symbol: W10) transition vector:
+  Can transition to 1 different words:
+    → 'and' (W0): 1.0000
+  Vector sum: 1.000000
+
+Word 'every' (Symbol: W11) transition vector:
+  Can transition to 1 different words:
+    → 'day' (W9): 1.0000
+  Vector sum: 1.000000
+
+Word 'flowers' (Symbol: W12) transition vector:
+  Can transition to 1 different words:
+    → 'bloom' (W5): 1.0000
+  Vector sum: 1.000000
+
+Word 'garden' (Symbol: W13) transition vector:
+  Can transition to 1 different words:
+    → 'children' (W8): 1.0000
+  Vector sum: 1.000000
+
+Word 'in' (Symbol: W14) transition vector:
+  Can transition to 1 different words:
+    → 'the' (W30): 1.0000
+  Vector sum: 1.000000
+
+Word 'is' (Symbol: W15) transition vector:
+  Can transition to 1 different words:
+    → 'beautiful' (W3): 1.0000
+  Vector sum: 1.000000
+
+================================================================================
+GENERATING NEW TEXT
+================================================================================
+
+Using word transition probability vectors to generate text...
+
+
+Generated Text 1:
+  spring life is beautiful when we appreciate the trees and laugh with joy
+  the flowers bloom in the sun rises in the flowers bloom in the flowers
+  bloom in the flowers bloom in the scent of spring life is beautiful
+
+Generated Text 2:
+  sun rises in the flowers bloom in the east and sets in the scent of spring
+  life is beautiful when we appreciate the flowers bloom in the east and
+  carries the east and sets in the park and sets in
+
+Generated Text 3:
+  sing in the sun rises in the east and carries the simple things around us
+  every day east and carries the west birds sing in the flowers bloom in the
+  trees and carries the west birds sing in the wind
+
+Generated Text 4:
+  scent of spring life is beautiful when we appreciate the wind blows
+  through the flowers bloom in the scent of spring life is beautiful when we
+  appreciate the scent of spring life is beautiful when we appreciate the
+  scent of
+
+Generated Text 5:
+  around us every day west birds sing in the park and laugh with joy the
+  simple things around us every day west birds sing in the scent of spring
+  life is beautiful when we appreciate the scent of spring life
+
+
+================================================================================
+TEXT COMPARISON
+================================================================================
+
+Original Training Text:
+  The sun rises in the east and sets in the west. Birds sing in the morning 
+    while the flowers bloom in the garden. Children play in the park and laugh 
+    with joy. The wind blows through the trees and carries the scent of spring. 
+    Life is beautiful when we appreciate the simple things around us every day.
+
+  Character count: 315
+  Word count: 57
+
+--------------------------------------------------------------------------------
+
+Generated Text 1:
+  spring life is beautiful when we appreciate the trees and laugh with joy the
+  flowers bloom in the sun rises in the flowers bloom in the flowers bloom in
+  the flowers bloom in the scent of spring life is beautiful
+
+  Character count: 211
+  Word count: 40
+
+Generated Text 2:
+  sun rises in the flowers bloom in the east and sets in the scent of spring
+  life is beautiful when we appreciate the flowers bloom in the east and
+  carries the east and sets in the park and sets in
+
+  Character count: 195
+  Word count: 40
+
+Generated Text 3:
+  sing in the sun rises in the east and carries the simple things around us
+  every day east and carries the west birds sing in the flowers bloom in the
+  trees and carries the west birds sing in the wind
+
+  Character count: 198
+  Word count: 40
+
+Generated Text 4:
+  scent of spring life is beautiful when we appreciate the wind blows through
+  the flowers bloom in the scent of spring life is beautiful when we
+  appreciate the scent of spring life is beautiful when we appreciate the
+  scent of
+
+  Character count: 223
+  Word count: 40
+
+Generated Text 5:
+  around us every day west birds sing in the park and laugh with joy the
+  simple things around us every day west birds sing in the scent of spring
+  life is beautiful when we appreciate the scent of spring life
+
+  Character count: 205
+  Word count: 40
+
+================================================================================
+ANALYSIS
+================================================================================
+
+The generated texts use the same word transition probabilities
+(word vectors) as the original text, creating similar patterns
+and word relationships while producing new combinations.

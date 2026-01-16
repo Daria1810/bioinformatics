@@ -1,0 +1,96 @@
+Processing text with 315 characters and 57 words...
+================================================================================
+WORD TRANSITION MATRIX ANALYSIS
+================================================================================
+
+Original Text (315 characters):
+The sun rises in the east and sets in the west. Birds sing in the morning 
+    while the flowers bloom in the garden. Children play in the park and laugh 
+    with joy. The wind blows through the tree...
+
+================================================================================
+TEXT STATISTICS
+================================================================================
+Total characters: 315
+Total words: 57
+Unique words: 41
+
+================================================================================
+WORD TO SYMBOL MAPPING
+================================================================================
+
+Word            Symbol     Frequency 
+--------------------------------------------------------------------------------
+the             W30        11        
+in              W14        5         
+and             W0         3         
+appreciate      W1         1         
+around          W2         1         
+beautiful       W3         1         
+birds           W4         1         
+bloom           W5         1         
+blows           W6         1         
+carries         W7         1         
+children        W8         1         
+day             W9         1         
+east            W10        1         
+every           W11        1         
+flowers         W12        1         
+garden          W13        1         
+is              W15        1         
+joy             W16        1         
+laugh           W17        1         
+life            W18        1         
+... and 21 more words
+
+================================================================================
+SAMPLE TRANSITION PROBABILITIES
+================================================================================
+
+Showing transitions with probability > 0.1:
+
+From Word       To Word         Symbol          Prob       Count     
+--------------------------------------------------------------------------------
+appreciate      the             W1→W30          1.0000     1         
+east            and             W10→W0          1.0000     1         
+every           day             W11→W9          1.0000     1         
+flowers         bloom           W12→W5          1.0000     1         
+garden          children        W13→W8          1.0000     1         
+in              the             W14→W30         1.0000     5         
+is              beautiful       W15→W3          1.0000     1         
+joy             the             W16→W30         1.0000     1         
+laugh           with            W17→W40         1.0000     1         
+life            is              W18→W15         1.0000     1         
+morning         while           W19→W38         1.0000     1         
+around          us              W2→W34          1.0000     1         
+of              spring          W20→W28         1.0000     1         
+park            and             W21→W0          1.0000     1         
+play            in              W22→W14         1.0000     1         
+rises           in              W23→W14         1.0000     1         
+scent           of              W24→W20         1.0000     1         
+sets            in              W25→W14         1.0000     1         
+simple          things          W26→W31         1.0000     1         
+sing            in              W27→W14         1.0000     1         
+spring          life            W28→W18         1.0000     1         
+sun             rises           W29→W23         1.0000     1         
+beautiful       when            W3→W37          1.0000     1         
+things          around          W31→W2          1.0000     1         
+through         the             W32→W30         1.0000     1         
+trees           and             W33→W0          1.0000     1         
+us              every           W34→W11         1.0000     1         
+we              appreciate      W35→W1          1.0000     1         
+west            birds           W36→W4          1.0000     1         
+when            we              W37→W35         1.0000     1         
+... and 11 more transitions
+
+================================================================================
+MATRIX VALIDATION
+================================================================================
+Symbol W0 (and): sum = 1.000000 - ✓
+Symbol W1 (appreciate): sum = 1.000000 - ✓
+Symbol W10 (east): sum = 1.000000 - ✓
+Symbol W11 (every): sum = 1.000000 - ✓
+Symbol W12 (flowers): sum = 1.000000 - ✓
+
+All rows sum to 1.0: Yes
+Word transition matrix saved to: word_transition_matrix.json
